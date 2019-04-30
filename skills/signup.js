@@ -5,7 +5,7 @@ module.exports = function(controller) {
   controller.hears(['sign up'],'direct_mention', function(bot, message) {
     const now = moment().tz('America/New_York');
     if(now.hour() > 11 || (now.hour() === 11 && now.minute() > 29)) {
-      bot.reply(message, `The lunch sign up is already closed for today as it's after 11:30am, <@${message.user}>. You can always try again tomorrow!.`);
+      bot.reply(message, `The lunch sign up is already closed for today as it's after 11:30am, <@${message.user}>. You can always try again tomorrow!`);
     } else {
 
       const todayFormat = now.format('MM_DD_YYYY');
@@ -59,7 +59,7 @@ module.exports = function(controller) {
     const now = moment().tz('America/New_York');
 
     if(now.hour() > 11 || (now.hour() === 11 && now.minute() > 29)) {
-      bot.reply(message, `The lunch sign up is already closed for today as it's after 11:30am, <@${message.user}>. You can always try again tomorrow!.`);
+      bot.reply(message, `The lunch sign up is already closed for today as it's after 11:30am, <@${message.user}>. You can always try again tomorrow!`);
     } else {
 
       controller.storage.channels.get(message.channel, function(err, channel) {
